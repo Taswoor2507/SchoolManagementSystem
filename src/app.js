@@ -1,14 +1,12 @@
 import express from "express"
-import dotenv from 'dotenv'
+import dotenv, { config } from 'dotenv'
 import cors from 'cors'
 import path from 'path'
-const app = express()
+const app = express();
 
-//config dot env
-dotenv.config({
-    path:"./config/.env"
-})
 
+//config dotenv
+dotenv.config({ path: path.join(path.dirname("src"), 'src','config', '.env') });
 //config cors 
 const whiteList = ["https://localhost:3000" , "https://localhost:4000"  ,"https://localhost:8080"]
 
@@ -35,3 +33,4 @@ app.use(express.static(path.join(path.dirname("public") , "/temp")))
 
 
 
+export default app
