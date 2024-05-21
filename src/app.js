@@ -1,5 +1,5 @@
 import express from "express"
-import dotenv, { config } from 'dotenv'
+import dotenv from 'dotenv'
 import cors from 'cors'
 import path from 'path'
 const app = express();
